@@ -9,6 +9,7 @@ function create(req,res,next){
 
   User.create(params)
     .then(user=>{
+      console.log(user);
       req.user = user;
       next();
       // res.json(user);

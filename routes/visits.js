@@ -2,7 +2,7 @@ const express = require('express');
 let router = express.Router();
 
 const authenticateOwner = require('../middlewares/authenticateOwner');
-const visitsController = require('../controllers/visitsController');
+const visitsController = require('../controllers/VisitsController');
 
 const jwtMiddleware = require('express-jwt');
 const secrets = require('../config/secrets');

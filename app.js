@@ -36,13 +36,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(findAppBySecret);
 app.use(findAppByApplicationId);
-app.use(authApp.unless({method: 'OPTIONS'}));
+// app.use(authApp.unless({method: 'OPTIONS'}));
 
 app.use(allowCORs.unless({path: '/public'}));
 
 app.use(
   jwtMiddleware({secret: secrets.jwtSecret})
-    .unless({path: ['/sessions','/users'], method: ['GET','OPTIONS']})
+    .unless({path: ['/sessions','/users'], method: ['GET','OPTIONS', 'POST']})
 )
 
 app.use('/places',places);
