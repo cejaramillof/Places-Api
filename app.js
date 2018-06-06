@@ -42,8 +42,9 @@ app.use(allowCORs.unless({path: '/public'}));
 
 app.use(
   jwtMiddleware({secret: secrets.jwtSecret})
-    .unless({path: ['/sessions','/users'], method: ['GET','OPTIONS', 'POST']})
-)
+    .unless({path: ['/sessions','/users'], method: ['GET','OPTIONS']})
+    //, 'POST'
+  )
 
 app.use('/places',places);
 app.use('/places',visitsPlaces);
@@ -67,6 +68,7 @@ app.use(function(req, res, next) {
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
+  console.log(err);
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
   console.log(res.locals.error);

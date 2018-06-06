@@ -4,5 +4,5 @@ module.exports = {
     cloudName: 'cejaramillof',
     apiSecret: 'wt3V5EMscDdtPlcW9liGAc-A80M'
   },
-  jwtSecret: 'xd'
+  jwtSecret: 'asdjb13yu1bchasljdbawyuk3h12uli312'
 }
